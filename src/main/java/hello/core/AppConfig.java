@@ -1,7 +1,7 @@
 package hello.core;
 
 import hello.core.discount.DiscountPolicy;
-import hello.core.discount.FixedDiscountPolicy;
+import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
@@ -24,6 +24,8 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy() {
-        return new FixedDiscountPolicy();
+        // 할인 정책 변경 시 이 부분만 변경하면 된다.
+        //return new FixedDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 }
